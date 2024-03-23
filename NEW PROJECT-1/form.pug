@@ -1,0 +1,18 @@
+html
+   head
+      title Form Tester
+   body
+      form(action = "/formdata", method = "POST")
+         div
+            label(for = "say") Name:
+            input(name = "name" )
+         br
+         div
+            label(for = "to") Age :
+            input(name = "age")
+         br
+         div
+            label(for = "to") Nationality :
+            input(name = "nationality")
+         br
+         button(type = "submit") Add me

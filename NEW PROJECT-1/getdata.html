@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Data Display</title>
+</head>
+<body>
+    <h1>Form Data</h1>
+    <ul id="formDataList"></ul>
+
+    <script>
+        // Function to fetch data from the server and display it
+        async function fetchData() {
+            try {
+                const response = await fetch('http://localhost:3000/formdata'); // Replace with your server URL
+                const formDataList = await response.json();
+                console.log(formDataList);
+                const formDataListElement = document.getElementById('formDataList');
+                formDataListElement.innerHTML = ''; // Clear previous content
+
+                formDataList.forEach(formData => {
+                    const listItem = document.createElement('li');
+                    listItem.textContent = `NAME:${formData.name} AGE:${formData.age} NATIONALITY:${formData.nationality}`;
+                    formDataListElement.appendChild(listItem);
+                });
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
+        }
+
+        // Call the fetchData function when the page loads
+        window.onload = fetchData();
+    </script>
+</body>
+</html>

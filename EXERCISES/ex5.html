@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+
+</head>
+<body>
+    <h2>CIRCLE  AREA  CALCULATOR</h2>
+    <label for="radius">Enter Radius:</label>
+    <input type="number" id="radiusval">
+    <button onclick="area()">Calculate</button>
+    <p id="res"></p>
+    <script>
+        const   PI=3.14;
+        function area(){
+            var radius = document.getElementById("radiusval").value;
+            let area = PI*radius*radius;
+            document.getElementById("res").innerHTML="AREA OF CIRCLE IS:"+area;
+        }
+
+    </script>
+</body>

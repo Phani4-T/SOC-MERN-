@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Movie details List</title>
+    </head>
+    <body>
+        <h1>Movie Details Available</h1>
+        <ul id="moviesList"></ul>
+        <script>
+            const movies=[
+                {Name:"Salaar",Starring:"Prabhas,Sruthi hassan",Language:"TELUGU",Rating:4.0},
+                {Name:"Hanuman",Starring:"Tejja,Amrita",Language:"TELUGU",Rating:3.5},
+                {Name:"Aqua Man",Starring:"SPY,YPS",Language:"ENGLISH",Rating:4.5},
+                {Name:"Hi Nannna",Starring:"Nani,Mrunal Takur",Language:"TELUGU",Rating:3.8},
+                {Name:"Guntur Karam",Starring:"Mahesh Babu,SreeLella",Language:"TELUGU",Rating:3.2  }
+            ];
+            const list=document.getElementById("moviesList");
+            for(movie of movies){
+                const li=document.createElement("li");
+                li.textContent=`MovieName:${movie.Name},Starring:${movie.Starring},Language Available:${movie.Language},Rating:${movie.Rating}`;
+                list.appendChild(li);
+            }
+        </script>
+    </body>
+</html>

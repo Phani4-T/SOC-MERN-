@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Movie details List</title>
+        <style>
+            .parent{
+                width:500px;
+                height:1100px;
+                border-radius:30px;
+                background-color: black;
+            }
+            .imgdivcss{
+                width:180px;
+                height:200px;
+                margin:5px,5px,5px,5px;
+                float:left;
+                background-color: grey; 
+                margin:10px;
+            }
+            .imgcss{
+                width:180px;
+                height:200px;
+            }
+            .textcss{
+                width:280px;
+                height:200px;
+                background-color:white;
+                float:right;
+                color:black;
+                margin:10px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Movie Details Available</h1>
+        <div id="parent" class="parent"></div>
+        <script>
+            const movies=[
+                {Name:"Salaar",Starring:"Actor1,Actor2",Language:"TELUGU",Rating:4.0,imgurl:"img1.jpg"},
+                {Name:"Hanuman",Starring:"Tejja,Amrita",Language:"TELUGU",Rating:3.5,imgurl:"img2.jpg"},
+                {Name:"Aqua Man",Starring:"SPY,YPS",Language:"ENGLISH",Rating:4.5,imgurl:"img3.jpg"},
+                {Name:"Hi Nannna",Starring:"Nani,Mrunal Takur",Language:"TELUGU",Rating:3.8,imgurl:"img4.jpg"},
+                {Name:"Guntur Karam",Starring:"Mahesh Babu,SreeLella",Language:"TELUGU",Rating:3.2,imgurl:"img5.jpg"}
+            ];
+            const d1=document.getElementById("parent");
+            for(movie of movies){
+                const img=document.createElement("div");
+                img.classList.add("imgdivcss");
+                const img1= document.createElement("img");
+                img1.classList.add("imgcss");
+                img1.src=`${movie.imgurl}`;
+                img.appendChild(img1);
+                d1.appendChild(img);
+                const text=document.createElement("div");
+                text.classList.add("textcss");
+                text.innerHTML=`<h2 style="text-align:center; font-size:29px;">${movie.Name}</h2>`+`<h4>Starring:${movie.Starring}</h4>`+`<h4>Languages:${movie.Language}</h4>`+`<h4>Rating:${movie.Rating}</h4>`; 
+                d1.appendChild(text);
+            }
+        </script>   
+    </body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>booking page</title>
+    </head>
+    <body>
+    <h1>Tickets Booking Online</h1>
+    <form>
+        <label for="tickets">Enter No.Of Tickets:</label>
+        <input type="number" id="nooftickets">
+        <button type="button" id="calbutton">Total Amount</button>
+    </form>
+    <p id="res"></p>
+    <script>
+        const txtprice=150;
+        const dis=0.1;
+        const reselement=document.getElementById("res");
+        document.getElementById("calbutton").addEventListener('click',function(){
+        const n =document.getElementById("nooftickets").value;
+        const totalprice = n * txtprice;
+        const discountprice = totalprice * dis;
+        const finalprice = totalprice - discountprice;
+        reselement.textContent = `Total Price: Rs. ${totalprice}, Discounted Amount: Rs. ${discountprice}, Final Total Price: Rs. ${finalprice}`;
+        });
+    </script>
+    </body>
+</html>
