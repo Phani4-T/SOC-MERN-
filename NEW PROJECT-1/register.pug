@@ -1,0 +1,22 @@
+html 
+    head
+        title Register form
+    body
+        form(action="/registerdata",method="POST")
+            div 
+                label(for="say") UserName: 
+                input(name="username")
+            br
+            div 
+                label(for="to") Email: 
+                input(name="email")
+            br
+            div 
+                label(for="to") NewPassword:
+                input(name="newpassword")
+            br
+            div 
+                label(for="to") ConformPassword:
+                input(name="conformpassword")
+            br
+            button(type="submit") Register 

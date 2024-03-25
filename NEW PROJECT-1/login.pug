@@ -1,0 +1,15 @@
+html 
+    head 
+        title login form
+    body 
+        form(action="/logindata",method="POST")
+            div     
+                label(for="username") UserName:
+                input(name="username")
+            br
+            div 
+                label(for="password") Password:
+                input(name="password")
+            br
+            button(type="submit") Login 
+            
